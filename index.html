@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +9,9 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{--red:#E8152B;--blue:#1A56FF;--purple:#6B1FD4;--prowler:#8B00FF;--cyan:#00E5FF;--yellow:#F5E642;--magenta:#FF2D78;--bg:#07070F;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace;overflow-x:hidden;cursor:none;}
-#cursor{position:fixed;width:20px;height:20px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-#trail-canvas{position:fixed;top:0;left:0;pointer-events:none;z-index:9998;}
+body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace;overflow-x:hidden;}
+
+
 .halftone{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:16px 16px;}
 .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px;}
 .splash-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 65% 45% at 12% 18%,rgba(107,31,212,.32) 0%,transparent 58%),radial-gradient(ellipse 52% 38% at 90% 12%,rgba(232,21,43,.26) 0%,transparent 55%),radial-gradient(ellipse 58% 48% at 78% 82%,rgba(26,86,255,.22) 0%,transparent 55%),radial-gradient(ellipse 48% 42% at 8% 88%,rgba(0,229,255,.18) 0%,transparent 55%),radial-gradient(ellipse 38% 32% at 52% 52%,rgba(139,0,255,.12) 0%,transparent 60%);animation:splash 9s ease-in-out infinite alternate;}
@@ -162,8 +161,6 @@ body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace
 <div class="ink-layer"><div class="ink i1"></div><div class="ink i2"></div><div class="ink i3"></div><div class="ink i4"></div><div class="ink i5"></div></div>
 <div class="panel-lines"></div>
 <svg style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.055;width:100%;height:100%;" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg"><g stroke="#fff" stroke-width="0.5" fill="none"><line x1="400" y1="0" x2="0" y2="420"/><line x1="400" y1="0" x2="190" y2="460"/><line x1="400" y1="0" x2="400" y2="520"/><line x1="400" y1="0" x2="610" y2="460"/><line x1="400" y1="0" x2="800" y2="420"/><line x1="400" y1="0" x2="100" y2="300"/><line x1="400" y1="0" x2="700" y2="300"/><path d="M0,180 Q400,80 800,180"/><path d="M0,320 Q400,220 800,320"/><path d="M0,460 Q400,360 800,460"/><path d="M0,600 Q400,500 800,600"/><circle cx="400" cy="0" r="160" stroke-dasharray="4,9"/><circle cx="400" cy="0" r="300" stroke-dasharray="4,13"/><circle cx="400" cy="0" r="450" stroke-dasharray="3,17"/><circle cx="400" cy="0" r="600" stroke-dasharray="3,22"/></g></svg>
-<svg id="cursor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3.5" fill="#E8152B"/><circle cx="10" cy="10" r="7" fill="none" stroke="#6B1FD4" stroke-width="0.8" stroke-dasharray="2,3"/><line x1="10" y1="0" x2="10" y2="5" stroke="#E8152B" stroke-width="1.5"/><line x1="10" y1="15" x2="10" y2="20" stroke="#00E5FF" stroke-width="1.5"/><line x1="0" y1="10" x2="5" y2="10" stroke="#E8152B" stroke-width="1.5"/><line x1="15" y1="10" x2="20" y2="10" stroke="#00E5FF" stroke-width="1.5"/></svg>
-<canvas id="trail-canvas"></canvas>
 <div id="glitch"></div>
 <div class="bot-stripe"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
@@ -171,7 +168,7 @@ body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace
 <div class="view active" id="viewHome">
 <div class="home-page">
 <div class="hero">
-  <div style="margin-bottom:8px;"><span class="dim-tag">EARTH-1610B · SPIDER-VERSE</span></div>
+  <div style="margin-bottom:8px;"><span class="dim-tag">EARTH-1218B · SPIDER-VERSE</span></div>
   <div class="avatar-wrap">
     <div class="av-halo"></div><div class="av-mask"></div>
     <div class="avatar" id="avatarEl">
@@ -194,7 +191,11 @@ body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace
     <div class="card-info"><div class="card-label">Instagram</div><div class="card-sub">@_al6x</div></div>
     <div class="arrow">→</div><div class="speed"></div>
   </a>
-  
+  <a class="card" data-a="prowler" href="https://x.com" target="_blank" rel="noopener">
+    <div class="icon">𝕏</div>
+    <div class="card-info"><div class="card-label">Twitter / X</div><div class="card-sub">@brooklyn_spider</div></div>
+    <div class="arrow">→</div><div class="speed"></div>
+  </a>
   <!-- Portfolio card — keeps user on the page -->
   <a class="card" data-a="purple" id="portfolioCard" style="cursor:pointer;">
     <div class="icon">🎨</div>
@@ -267,28 +268,6 @@ body{background:var(--bg);min-height:100vh;font-family:'IBM Plex Mono',monospace
 
 <script>
 var _0x4a2f=function(){
-var c=document.getElementById('trail-canvas');
-var x=c.getContext('2d');
-var cur=document.getElementById('cursor');
-var tr=[];
-function rs(){c.width=window.innerWidth;c.height=window.innerHeight;}
-rs();window.addEventListener('resize',rs);
-document.addEventListener('mousemove',function(e){
-cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
-tr.push({x:e.clientX,y:e.clientY,a:1});
-if(tr.length>22)tr.shift();
-});
-var tc=['rgba(232,21,43,','rgba(107,31,212,','rgba(0,229,255,'];
-(function lp(){
-x.clearRect(0,0,c.width,c.height);
-tr.forEach(function(t,i){
-x.beginPath();x.arc(t.x,t.y,2.5*(i/tr.length),0,Math.PI*2);
-x.fillStyle=tc[i%3]+(t.a*.5*(i/tr.length))+')';x.fill();t.a*=.83;
-});
-tr=tr.filter(function(t){return t.a>.01;});
-requestAnimationFrame(lp);
-})();
-
 function glt(){
 var e=document.getElementById('glitch');
 e.classList.add('fire');
